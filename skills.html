@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>김영범 | 능력 - 최적화된 알고리즘과 견고한 인프라</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons (CDN) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Pretendard Font -->
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+    <style>
+        body {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+            background-color: #F8FAFC;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F1F5F9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1B2A4A;
+            border-radius: 4px;
+        }
+        .transition-all-300 {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        /* Block coding simulation specific styles */
+        .block-outline {
+            position: relative;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            50: '#F0F4FA',
+                            100: '#D9E2F1',
+                            200: '#B3C6E3',
+                            500: '#3F619B',
+                            800: '#1B2A4A',
+                            900: '#0F1A30',
+                            950: '#0A1120'
+                        },
+                        softgray: {
+                            50: '#F8FAFC',
+                            100: '#F1F5F9',
+                            200: '#E2E8F0',
+                            300: '#CBD5E1',
+                            600: '#475569',
+                            800: '#1E293B'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="text-softgray-800 selection:bg-navy-200 selection:text-navy-900 overflow-x-hidden">
+
+    <!-- Navigation (MPA - Skills Active) -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-softgray-50/80 backdrop-blur-md border-b border-softgray-200 transition-all-300">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="index.html" class="flex items-center space-x-2 font-bold text-navy-800 text-lg">
+                <span class="w-3 h-3 bg-navy-800 rounded-full animate-pulse"></span>
+                <span>Calm & Persistent</span>
+            </a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-softgray-600">
+                <a href="index.html" class="hover:text-navy-800 transition-all-300">홈</a>
+                <a href="about.html" class="hover:text-navy-800 transition-all-300">소개</a>
+                <!-- '능력' Page Active State applied natively -->
+                <a href="skills.html" class="text-navy-800 font-bold border-b-2 border-navy-800 pb-1 transition-all-300">능력</a>
+            </div>
+            <a href="about.html#contact" class="px-4 py-2 bg-navy-800 hover:bg-navy-900 text-white rounded-lg text-xs font-semibold shadow-md transition-all-300 hover:shadow-lg">
+                협업 제안하기
+            </a>
+        </div>
+    </nav>
+
+    <!-- Toast Popup -->
+    <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+    <!-- Section: CLUE SSAFY S등급 -->
+    <section id="strength-clue" class="pt-28 pb-20 bg-navy-800 text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(#ffffff0a_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left text -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="inline-flex items-center space-x-2 bg-navy-700/50 text-navy-100 border border-navy-500/30 px-3 py-1 rounded-full text-xs font-semibold">
+                        <i data-lucide="zap" class="w-3.5 h-3.5 text-yellow-400"></i>
+                        <span>실력 증명 (Proved Performance)</span>
+                    </div>
+                    
+                    <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight leading-tight">
+                        CLUE SSAFY S등급 15회 획득<br>
+                        극강의 최적화 알고리즘
+                    </h2>
+                    
+                    <p class="text-navy-200 text-sm sm:text-base leading-relaxed">
+                        로봇의 움직임을 명령 블록으로 매핑하여 최단 이동 횟수로 목적지에 도달하게 만드는 고도의 시뮬레이션 알고리즘 게임 <strong class="text-white">CLUE SSAFY</strong>.
+                    </p>
+                    <p class="text-navy-200 text-sm sm:text-base leading-relaxed">
+                        어설픈 타협에 만족하지 않고, 불필요하게 낭비되는 단 1회의 경로와 블록 낭비를 찾아내기 위해 고심했습니다. <strong class="text-yellow-400">최소한의 명령 블록만을 조립해 최고의 경로 효율을 뽑아내는 극한의 최적화 조건</strong>을 통과해 당당하게 <strong class="text-white">S등급을 15회 획득</strong>해냈습니다.
+                    </p>
+
+                    <!-- Stat Box -->
+                    <div class="bg-navy-900/60 border border-navy-500/20 p-5 rounded-2xl flex items-center space-x-4">
+                        <div class="w-12 h-12 bg-yellow-400/10 rounded-xl flex items-center justify-center">
+                            <i data-lucide="award" class="w-6 h-6 text-yellow-400"></i>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-bold text-white tracking-widest font-mono">15 S-GRADE</p>
+                            <p class="text-xs text-navy-300">최소 명령 블록 최적화 통과</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Pathfinding Interactive Simulator -->
+                <div class="lg:col-span-7 bg-navy-900 border border-navy-700 p-6 rounded-3xl shadow-2xl">
+                    <div class="flex items-center justify-between mb-4 border-b border-navy-700 pb-4">
+                        <div class="flex items-center space-x-2">
+                            <i data-lucide="cpu" class="w-5 h-5 text-yellow-400"></i>
+                            <span class="text-xs font-mono font-bold uppercase tracking-widest text-navy-200">CLUE SSAFY Solver Block</span>
+                        </div>
+                        <span class="px-2 py-0.5 bg-yellow-400 text-navy-950 font-mono text-[10px] font-extrabold rounded">MINIMUM BLOCK MODE</span>
+                    </div>
+
+                    <div class="relative bg-navy-950 rounded-2xl p-4 overflow-hidden shadow-inner flex flex-col md:flex-row items-center gap-6">
+                        
+                        <!-- Grid Board -->
+                        <div class="relative w-64 h-64 bg-navy-900 rounded-xl border border-navy-700/60 p-1 grid grid-cols-5 grid-rows-5 gap-1 shrink-0" id="clue-grid">
+                            <!-- JS populated -->
+                        </div>
+
+                        <!-- Panel Controls -->
+                        <div class="flex-1 w-full space-y-4 text-left font-sans">
+                            <h4 class="text-sm font-bold text-white flex items-center space-x-1.5">
+                                <i data-lucide="terminal" class="w-4 h-4 text-emerald-400"></i>
+                                <span>설계된 최적의 명령 알고리즘 블록</span>
+                            </h4>
+                            
+                            <!-- Custom Scratch/Blockly Styled Code -->
+                            <div class="space-y-1 font-mono text-[11px] text-navy-100">
+                                <div id="code-block-repeat" class="bg-indigo-900/60 border-l-4 border-indigo-500 p-2 rounded-lg block-outline transition-all duration-300">
+                                    <span class="font-bold text-indigo-300">목적지까지 반복 {</span>
+                                    
+                                    <div id="code-block-condition" class="pl-4 py-1 my-1 bg-amber-900/40 border-l-4 border-amber-500 rounded block-outline transition-all duration-300">
+                                        <div class="font-bold text-amber-300 font-sans">만약 [<span class="text-white">오른쪽</span>]에 길이 있다면 {</div>
+                                        <div id="code-block-turn" class="pl-4 py-1 text-emerald-300 font-bold transition-all duration-300">&rarr; 우로 회전</div>
+                                        <div class="font-bold text-amber-300 font-sans">} 아니라면 {</div>
+                                        <div id="code-block-forward" class="pl-4 py-1 text-emerald-300 font-bold transition-all duration-300">&rarr; 앞으로 전진</div>
+                                        <div class="font-bold text-amber-300 font-sans">}</div>
+                                    </div>
+                                    
+                                    <span class="font-bold text-indigo-300">}</span>
+                                </div>
+                            </div>
+
+                            <div class="pt-1 flex flex-col gap-2">
+                                <button onclick="runClueSimulation()" id="btn-run-simulation" class="w-full py-2.5 px-4 bg-emerald-500 hover:bg-emerald-600 text-navy-950 font-bold rounded-xl text-xs flex items-center justify-center space-x-2 shadow-lg shadow-emerald-500/20 active:scale-95 transition-all-300">
+                                    <i data-lucide="play-circle" class="w-4 h-4"></i>
+                                    <span>최소 블록 최적화 시뮬레이션 작동</span>
+                                </button>
+                                <p class="text-[10px] text-navy-400 text-center">※ 명령 블록 수를 극도로 줄인 알고리즘이 로봇을 안전하게 이끕니다.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: 실무 경력 -->
+    <section id="strength-experience" class="py-20 bg-softgray-100 border-b border-softgray-200 relative overflow-hidden">
+        <div class="absolute top-10 right-10 w-96 h-96 bg-navy-100 rounded-full filter blur-3xl opacity-30 -z-10"></div>
+        
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <div class="inline-flex items-center space-x-2 bg-white px-3 py-1 rounded-full shadow-sm border border-softgray-200 text-xs text-navy-800 mb-4 font-semibold">
+                    <i data-lucide="briefcase" class="w-4 h-4 text-navy-800"></i>
+                    <span>실무 경력 (Professional Experience)</span>
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-800 tracking-tight leading-tight">
+                    현업에서 입증해낸<br class="sm:hidden"> 견고한 풀스택 설계와 서버 관리 역량
+                </h2>
+                <p class="text-softgray-600 mt-4 text-sm sm:text-base leading-relaxed">
+                    단순한 코드 작성을 넘어 파일 데이터 가공 연산의 본질을 해결하고, 인프라의 안정적인 빌드 및 무중단 배포를 직접 주도하며 팀의 기둥 역할을 수행했습니다.
+                </p>
+            </div>
+
+            <!-- Experience Card -->
+            <div class="bg-white border border-softgray-200 rounded-3xl p-8 shadow-xl max-w-4xl mx-auto">
+                <div class="flex flex-col md:flex-row md:items-center justify-between border-b border-softgray-200 pb-6 mb-6 gap-4">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-14 h-14 bg-navy-800 rounded-2xl flex items-center justify-center text-white shadow-md">
+                            <i data-lucide="building" class="w-7 h-7"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-navy-800">인쇄업체 전산개발팀</h3>
+                            <p class="text-sm text-softgray-600 font-semibold mt-0.5">주문제작 쇼핑몰 & ERP 풀스택 개발</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col md:items-end">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-navy-50 text-navy-800 border border-navy-100">
+                            총 14개월 근무 (Full-Time)
+                        </span>
+                        <span class="text-xs text-softgray-600 mt-2 flex items-center gap-1">
+                            <i data-lucide="calendar" class="w-3.5 h-3.5"></i>
+                            실무 적용 및 실적 증명 완료
+                        </span>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    
+                    <!-- Task 1 -->
+                    <div class="p-5 rounded-2xl bg-softgray-50 border border-softgray-200 flex flex-col justify-between transition-all duration-300 hover:border-navy-200 hover:shadow-md">
+                        <div class="space-y-4">
+                            <div class="w-10 h-10 rounded-xl bg-navy-800 text-white flex items-center justify-center shadow">
+                                <i data-lucide="file-up" class="w-5 h-5"></i>
+                            </div>
+                            <h4 class="text-base font-bold text-navy-800 leading-snug">디자인 파일 벡터 연산 & 가공 엔진 개발</h4>
+                            <p class="text-xs text-softgray-600 leading-relaxed">
+                                고객이 업로드한 작업 파일(<strong class="text-navy-800">PDF, AI, EPS, CDR</strong>)의 내부 정밀 벡터 데이터(좌표값)를 고유 연산 알고리즘으로 계산 및 추출한 뒤, 최종 규격에 맞게 PDF 형식으로 완벽하게 리빌딩 및 가공하는 전체 자동화 파이프라인을 구축했습니다.
+                            </p>
+                        </div>
+                        <div class="border-t border-softgray-200/60 pt-3 mt-4 text-[10px] font-mono text-navy-800 font-bold">
+                            #Vector_Math #Fullstack #PDF_Processing
+                        </div>
+                    </div>
+
+                    <!-- Task 2 -->
+                    <div class="p-5 rounded-2xl bg-softgray-50 border border-softgray-200 flex flex-col justify-between transition-all duration-300 hover:border-navy-200 hover:shadow-md">
+                        <div class="space-y-4">
+                            <div class="w-10 h-10 rounded-xl bg-navy-800 text-white flex items-center justify-center shadow">
+                                <i data-lucide="server" class="w-5 h-5"></i>
+                            </div>
+                            <h4 class="text-base font-bold text-navy-800 leading-snug">안정적인 서버 인프라 책임 운영 및 관리</h4>
+                            <p class="text-xs text-softgray-600 leading-relaxed">
+                                팀 내 메인 인프라 서버인 <strong class="text-navy-800">Rocky 9 Linux</strong> 환경을 능숙하게 핸들링하고, 웹 서비스의 기밀성과 무결성을 위한 <strong class="text-navy-800">SSL 보안 인증서</strong> 발급/갱신 및 보안 전반의 트러블 슈팅을 전담하여 시스템 다운타임을 최소화했습니다.
+                            </p>
+                        </div>
+                        <div class="border-t border-softgray-200/60 pt-3 mt-4 text-[10px] font-mono text-navy-800 font-bold">
+                            #Rocky9_Linux #Server_Infrastructure #SSL
+                        </div>
+                    </div>
+
+                    <!-- Task 3 -->
+                    <div class="p-5 rounded-2xl bg-softgray-50 border border-softgray-200 flex flex-col justify-between transition-all duration-300 hover:border-navy-200 hover:shadow-md">
+                        <div class="space-y-4">
+                            <div class="w-10 h-10 rounded-xl bg-navy-800 text-white flex items-center justify-center shadow">
+                                <i data-lucide="git-branch" class="w-5 h-5"></i>
+                            </div>
+                            <h4 class="text-base font-bold text-navy-800 leading-snug">CI/CD 빌드 및 자동 배포 시스템 구축</h4>
+                            <p class="text-xs text-softgray-600 leading-relaxed">
+                                수동 배포로 발생하던 인적 에러를 완벽하게 배제하고자, <strong class="text-navy-800">GitLab</strong> 웹훅을 <strong class="text-navy-800">Jenkins</strong> 서버와 긴밀히 동기화해 테스트 및 스테이징 환경 배포를 자동화하여 팀원들의 효율적인 병렬 개발을 보장했습니다.
+                            </p>
+                        </div>
+                        <div class="border-t border-softgray-200/60 pt-3 mt-4 text-[10px] font-mono text-navy-800 font-bold">
+                            #CI_CD_Automation #GitLab_Jenkins #DevOps
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-navy-950 text-navy-200 border-t border-navy-900">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between text-xs space-y-4 md:space-y-0">
+            <div class="flex items-center space-x-2">
+                <span class="w-2.5 h-2.5 bg-yellow-400 rounded-full animate-ping"></span>
+                <span>© 2026 듬직하고 차분한 개발자 김영범. All Rights Reserved.</span>
+            </div>
+            <div class="flex space-x-6 text-navy-400">
+                <a href="index.html" class="hover:text-white transition-all-300">홈</a>
+                <a href="about.html" class="hover:text-white transition-all-300">소개</a>
+                <a href="skills.html" class="hover:text-white transition-all-300">능력</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Pathfinding simulation logic -->
+    <script>
+        function showToast(message, type = 'info') {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = `flex items-center space-x-2 px-4 py-3 bg-white text-softgray-800 rounded-xl shadow-2xl border border-softgray-200/60 transition-all duration-300 transform translate-y-2 opacity-0 pointer-events-auto z-50`;
+            
+            let iconColor = 'text-navy-800';
+            let iconName = 'info';
+            if (type === 'success') {
+                iconColor = 'text-emerald-500';
+                iconName = 'check-circle-2';
+            } else if (type === 'error') {
+                iconColor = 'text-red-500';
+                iconName = 'alert-triangle';
+            }
+
+            toast.innerHTML = `
+                <i data-lucide="${iconName}" class="w-4 h-4 ${iconColor}"></i>
+                <span class="text-xs font-bold font-sans">${message}</span>
+            `;
+            
+            container.appendChild(toast);
+            lucide.createIcons();
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-2', 'opacity-0');
+            }, 10);
+
+            setTimeout(() => {
+                toast.classList.add('opacity-0', 'translate-y-2');
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+
+        const gridContainer = document.getElementById('clue-grid');
+        const boardSize = 5;
+        let robotX = 0;
+        let robotY = 0;
+        let simulationInterval = null;
+        let isSimulating = false;
+
+        const obstacles = [
+            [0, 1], [0, 2], [1, 1], [1, 2], 
+            [3, 0], [3, 1], [3, 2], 
+            [4, 0], [4, 1], [4, 2], 
+            [2, 4]
+        ];
+
+        function renderGrid() {
+            gridContainer.innerHTML = '';
+            for (let r = 0; r < boardSize; r++) {
+                for (let c = 0; c < boardSize; c++) {
+                    const cell = document.createElement('div');
+                    cell.className = 'bg-navy-950 border border-navy-800 rounded-lg flex items-center justify-center relative font-mono text-[9px] text-navy-500 transition-all duration-300';
+                    cell.setAttribute('data-r', r);
+                    cell.setAttribute('data-c', c);
+
+                    const isObstacle = obstacles.some(obs => obs[0] === r && obs[1] === c);
+                    if (isObstacle) {
+                        cell.className += ' bg-red-900/30 border-red-800 text-red-400';
+                        cell.innerHTML = '<i data-lucide="ban" class="w-4.5 h-4.5 opacity-60"></i>';
+                    }
+
+                    if (r === 4 && c === 4) {
+                        cell.className += ' bg-yellow-400/20 border-yellow-400 text-yellow-400 font-bold animate-pulse';
+                        cell.innerHTML = '<i data-lucide="trophy" class="w-5 h-5 text-yellow-400"></i>';
+                    }
+
+                    if (r === robotY && c === robotX) {
+                        cell.className += ' bg-emerald-500/30 border-emerald-400 text-emerald-400 font-bold scale-105 z-10';
+                        cell.innerHTML = `
+                            <div class="flex flex-col items-center">
+                                <i data-lucide="bot" class="w-5 h-5 animate-bounce"></i>
+                            </div>
+                        `;
+                    }
+
+                    gridContainer.appendChild(cell);
+                }
+            }
+            lucide.createIcons();
+        }
+
+        function highlightBlock(blockId) {
+            const allBlocks = ['code-block-repeat', 'code-block-condition', 'code-block-turn', 'code-block-forward'];
+            allBlocks.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) {
+                    el.classList.remove('scale-[1.02]', 'bg-emerald-950/40', 'border-emerald-400');
+                    if (id === 'code-block-repeat') el.className = el.className.replace('border-indigo-400', 'border-indigo-500');
+                    if (id === 'code-block-condition') el.className = el.className.replace('border-amber-400', 'border-amber-500');
+                }
+            });
+
+            const activeEl = document.getElementById(blockId);
+            if (activeEl) {
+                activeEl.classList.add('scale-[1.02]', 'bg-emerald-950/40');
+                if (blockId === 'code-block-repeat') activeEl.className = activeEl.className.replace('border-indigo-500', 'border-indigo-400');
+                if (blockId === 'code-block-condition') activeEl.className = activeEl.className.replace('border-amber-500', 'border-amber-400');
+                if (blockId === 'code-block-turn' || blockId === 'code-block-forward') {
+                    activeEl.classList.add('text-yellow-400');
+                }
+            }
+        }
+
+        function runClueSimulation() {
+            if (isSimulating) return;
+            isSimulating = true;
+            
+            robotX = 0;
+            robotY = 0;
+            renderGrid();
+
+            const runBtn = document.getElementById('btn-run-simulation');
+            runBtn.disabled = true;
+            runBtn.classList.remove('bg-emerald-500', 'hover:bg-emerald-600');
+            runBtn.classList.add('bg-neutral-600', 'text-neutral-300', 'cursor-not-allowed');
+
+            showToast('S등급 최단 블록 알고리즘 연산을 작동합니다.', 'info');
+
+            let step = 0;
+            const steps = [
+                { y: 0, x: 0, block: 'code-block-repeat' },
+                { y: 1, x: 0, block: 'code-block-forward' },
+                { y: 2, x: 0, block: 'code-block-forward' },
+                { y: 2, x: 0, block: 'code-block-condition' },
+                { y: 2, x: 1, block: 'code-block-turn' },
+                { y: 2, x: 2, block: 'code-block-forward' },
+                { y: 2, x: 3, block: 'code-block-forward' },
+                { y: 2, x: 3, block: 'code-block-condition' },
+                { y: 3, x: 3, block: 'code-block-turn' },
+                { y: 4, x: 3, block: 'code-block-forward' },
+                { y: 4, x: 3, block: 'code-block-turn' },
+                { y: 4, x: 4, block: 'code-block-forward' }
+            ];
+
+            simulationInterval = setInterval(() => {
+                if (step < steps.length) {
+                    const s = steps[step];
+                    robotX = s.x;
+                    robotY = s.y;
+                    renderGrid();
+                    highlightBlock(s.block);
+                    step++;
+                } else {
+                    clearInterval(simulationInterval);
+                    isSimulating = false;
+
+                    const elements = ['code-block-repeat', 'code-block-condition', 'code-block-turn', 'code-block-forward'];
+                    elements.forEach(id => {
+                        const el = document.getElementById(id);
+                        if (el) {
+                            el.classList.add('border-emerald-500');
+                        }
+                    });
+
+                    runBtn.disabled = false;
+                    runBtn.classList.remove('bg-neutral-600', 'text-neutral-300', 'cursor-not-allowed');
+                    runBtn.classList.add('bg-emerald-500', 'hover:bg-emerald-600');
+
+                    showToast('최소 블록 조합 조건 만족! S등급 성공.', 'success');
+                }
+            }, 750);
+        }
+
+        window.onload = function() {
+            lucide.createIcons();
+            renderGrid();
+        };
+    </script>
+</body>
+</html>
