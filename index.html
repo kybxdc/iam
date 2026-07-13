@@ -13,9 +13,8 @@
     <style>
         body {
             font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
-            background-color: #F8FAFC;
         }
-        /* 커스텀 스크롤바 스타일 */
+        /* 브라우저 엔진 기본 스크롤바 커스텀 */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -25,9 +24,6 @@
         ::-webkit-scrollbar-thumb {
             background: #1B2A4A;
             border-radius: 4px;
-        }
-        .transition-all-300 {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
     </style>
     <script>
@@ -45,7 +41,7 @@
                             950: '#0A1120'
                         },
                         softgray: {
-                            50: '#F8FAFC',  /* 메인 부드러운 그레이 배경색 */
+                            50: '#F8FAFC',  /* 메인 그레이 배경색 */
                             100: '#F1F5F9',
                             200: '#E2E8F0',
                             300: '#CBD5E1',
@@ -58,57 +54,57 @@
         }
     </script>
 </head>
-<body class="text-softgray-800 selection:bg-navy-200 selection:text-navy-900 overflow-x-hidden min-h-screen flex flex-col justify-between">
+<body class="bg-softgray-50 text-softgray-800 selection:bg-navy-200 selection:text-navy-900 overflow-x-hidden min-h-screen flex flex-col justify-between">
 
-    <!-- 내비게이션 바 (MPA - 홈 활성화 상태) -->
-    <nav class="fixed top-0 left-0 w-full z-50 bg-softgray-50/80 backdrop-blur-md border-b border-softgray-200 transition-all-300">
+    <!-- 내비게이션 바 (MPA - '홈' 활성화) -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-softgray-50/80 backdrop-blur-md border-b border-softgray-200 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]">
         <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
             <a href="index.html" class="flex items-center space-x-2 font-bold text-navy-800 text-lg">
                 <span class="w-3 h-3 bg-navy-800 rounded-full animate-pulse"></span>
                 <span>Calm & Persistent</span>
             </a>
             <div class="hidden md:flex space-x-8 text-sm font-medium text-softgray-600">
-                <!-- '홈' 활성화 스타일 직접 부여 -->
-                <a href="index.html" class="text-navy-800 font-bold border-b-2 border-navy-800 pb-1 transition-all-300">홈</a>
-                <a href="about.html" class="hover:text-navy-800 transition-all-300">소개</a>
-                <a href="skills.html" class="hover:text-navy-800 transition-all-300">능력</a>
+                <!-- '홈' 페이지 정적 활성화 디자인 -->
+                <a href="index.html" class="text-navy-800 font-bold border-b-2 border-navy-800 pb-1 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]">홈</a>
+                <a href="about.html" class="hover:text-navy-800 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]">소개</a>
+                <a href="skills.html" class="hover:text-navy-800 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]">능력</a>
             </div>
-            <a href="about.html#contact" class="px-4 py-2 bg-navy-800 hover:bg-navy-900 text-white rounded-lg text-xs font-semibold shadow-md transition-all-300 hover:shadow-lg">
+            <a href="about.html#contact" class="px-4 py-2 bg-navy-800 hover:bg-navy-900 text-white rounded-lg text-xs font-semibold shadow-md transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:shadow-lg">
                 협업 제안하기
             </a>
         </div>
     </nav>
 
-    <!-- 알림용 토스트 메시지 컨테이너 -->
+    <!-- 토스트 메시지 수신 레이어 -->
     <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 pointer-events-none"></div>
 
-    <!-- 히어로 본문 영역 -->
+    <!-- 메인 비주얼 히어로 영역 -->
     <main class="flex-grow pt-28 pb-16 flex flex-col justify-center items-center relative overflow-hidden bg-gradient-to-b from-softgray-50 to-softgray-100">
-        <!-- 배경 데코레이션 그라디언트 써클 -->
+        <!-- 구형 그라데이션 광원 데코 -->
         <div class="absolute -top-40 -right-40 w-96 h-96 bg-navy-50 rounded-full filter blur-3xl opacity-60"></div>
         <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-navy-100 rounded-full filter blur-3xl opacity-50"></div>
 
         <div class="max-w-4xl mx-auto px-6 text-center z-10 w-full">
-            <!-- 일상의 걷기 메타포 태그 -->
+            <!-- 걷기 철학 배지 -->
             <div class="inline-flex items-center space-x-2 bg-white px-4 py-1.5 rounded-full shadow-sm border border-softgray-200 text-xs text-softgray-600 mb-6 animate-bounce">
                 <i data-lucide="footprints" class="w-4 h-4 text-navy-800"></i>
                 <span>좋은 음악을 들으며 산책하듯, 일상의 복잡함을 풉니다.</span>
             </div>
 
-            <!-- 메인 슬로건 -->
+            <!-- 슬로건 타이포그래피 -->
             <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-navy-800 tracking-tight leading-tight mb-6">
                 생각은 <span class="text-navy-500 underline decoration-navy-200 decoration-4 underline-offset-4">차분하게</span>,<br class="sm:hidden"> 
                 코드는 <span class="bg-navy-800 text-white px-3 py-1 rounded-lg shadow-md inline-block mt-2 sm:mt-0">견고하게</span>
             </h1>
 
-            <p class="text-base sm:text-lg text-softgray-600 max-w-xl mx-auto mb-10 leading-relaxed">
+            <p class="text-base sm:text-lg text-softgray-600 max-w-xl mx-auto mb-10 leading-relaxed font-sans">
                 반갑습니다. SSAFY 16기 동료 여러분! <br>
                 복잡한 문제 앞에서도 조급해하지 않는 차분함과,<br class="hidden sm:inline">
                 최소한의 명령 설계로 최적 효율을 찾는 집요함으로 무장한 개발자 <strong>김영범</strong>입니다.
             </p>
 
-            <!-- 인터랙티브 BGM 추천 컴포넌트 -->
-            <div class="max-w-xl mx-auto bg-white p-6 rounded-2xl shadow-xl border border-softgray-200/60 mb-12 transform hover:scale-[1.01] transition-all-300">
+            <!-- 인터랙티브 음악 추천 플레이 리스트 카드 -->
+            <div class="max-w-xl mx-auto bg-white p-6 rounded-2xl shadow-xl border border-softgray-200/60 mb-12 transform hover:scale-[1.01] transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]">
                 <div class="flex items-center justify-between mb-4">
                     <div class="flex items-center space-x-2">
                         <span class="flex h-2 w-2 relative">
@@ -120,23 +116,23 @@
                     <div class="text-[10px] text-navy-800 bg-navy-50 px-2.5 py-0.5 rounded-md font-semibold font-sans">생각을 정돈해 줄 추천 음악</div>
                 </div>
 
-                <!-- 테마 전환 버튼그룹 -->
+                <!-- 테마 버튼 그리드 -->
                 <div class="grid grid-cols-3 gap-2 mb-6">
-                    <button onclick="switchBgmTheme('cafe')" id="btn-bgm-cafe" class="py-2.5 px-3 text-xs rounded-lg font-medium border border-navy-100 bg-navy-50 text-navy-800 hover:bg-navy-100 transition-all-300 flex flex-col items-center gap-1.5 shadow-sm">
+                    <button onclick="switchBgmTheme('cafe')" id="btn-bgm-cafe" class="py-2.5 px-3 text-xs rounded-lg font-medium border border-navy-100 bg-navy-50 text-navy-800 hover:bg-navy-100 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] flex flex-col items-center gap-1.5 shadow-sm">
                         <i data-lucide="coffee" class="w-4 h-4"></i>
                         <span>차분한 카페</span>
                     </button>
-                    <button onclick="switchBgmTheme('forest')" id="btn-bgm-forest" class="py-2.5 px-3 text-xs rounded-lg font-medium border border-transparent bg-softgray-100 text-softgray-600 hover:bg-softgray-200 transition-all-300 flex flex-col items-center gap-1.5">
+                    <button onclick="switchBgmTheme('forest')" id="btn-bgm-forest" class="py-2.5 px-3 text-xs rounded-lg font-medium border border-transparent bg-softgray-100 text-softgray-600 hover:bg-softgray-200 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] flex flex-col items-center gap-1.5">
                         <i data-lucide="umbrella" class="w-4 h-4"></i>
                         <span>빗소리 산책</span>
                     </button>
-                    <button onclick="switchBgmTheme('meditate')" id="btn-bgm-meditate" class="py-2.5 px-3 text-xs rounded-lg font-medium border border-transparent bg-softgray-100 text-softgray-600 hover:bg-softgray-200 transition-all-300 flex flex-col items-center gap-1.5">
+                    <button onclick="switchBgmTheme('meditate')" id="btn-bgm-meditate" class="py-2.5 px-3 text-xs rounded-lg font-medium border border-transparent bg-softgray-100 text-softgray-600 hover:bg-softgray-200 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] flex flex-col items-center gap-1.5">
                         <i data-lucide="brain" class="w-4 h-4"></i>
                         <span>깊은 명상</span>
                     </button>
                 </div>
 
-                <!-- 추천 정보 카드 상세 내용 -->
+                <!-- 상세 큐레이션 패널 -->
                 <div class="bg-softgray-50 border border-softgray-200/80 p-5 rounded-xl text-left space-y-4">
                     <div class="flex items-start space-x-3.5">
                         <div class="w-10 h-10 bg-navy-800 text-white rounded-lg flex items-center justify-center shrink-0 shadow animate-pulse" id="music-vinyl">
@@ -154,7 +150,7 @@
 
                     <div class="pt-2 border-t border-softgray-200/60 flex items-center justify-between text-xs">
                         <span class="text-softgray-500 font-sans">추천 검색어: <strong class="font-mono text-navy-800 font-semibold" id="bgm-search-keyword">Lofi Girl Jazz Lofi</strong></span>
-                        <button onclick="copySearchKeyword()" class="px-2.5 py-1.5 bg-white border border-softgray-300 hover:border-navy-500 hover:text-navy-800 text-[11px] text-softgray-600 font-bold rounded-md flex items-center gap-1 transition-all-300 active:scale-95 font-sans">
+                        <button onclick="copySearchKeyword()" class="px-2.5 py-1.5 bg-white border border-softgray-300 hover:border-navy-500 hover:text-navy-800 text-[11px] text-softgray-600 font-bold rounded-md flex items-center gap-1 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] active:scale-95 font-sans">
                             <i data-lucide="copy" class="w-3 h-3"></i>
                             <span>검색어 복사</span>
                         </button>
@@ -162,13 +158,13 @@
                 </div>
             </div>
 
-            <!-- 서브 페이지 리다이렉트 안내 링크 -->
+            <!-- 네비게이션 가이드 버트 그룹 -->
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto">
-                <a href="about.html" class="w-full sm:w-auto px-6 py-3 bg-white border border-softgray-200 text-navy-800 hover:bg-navy-50 rounded-xl text-sm font-bold flex items-center justify-center gap-2 shadow-md transition-all-300 font-sans">
+                <a href="about.html" class="w-full sm:w-auto px-6 py-3 bg-white border border-softgray-200 text-navy-800 hover:bg-navy-50 rounded-xl text-sm font-bold flex items-center justify-center gap-2 shadow-md transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] font-sans">
                     <i data-lucide="user" class="w-4 h-4 text-navy-800"></i>
                     <span>소개 페이지로 가기</span>
                 </a>
-                <a href="skills.html" class="w-full sm:w-auto px-6 py-3 bg-navy-800 text-white hover:bg-navy-900 rounded-xl text-sm font-bold flex items-center justify-center gap-2 shadow-md transition-all-300 font-sans">
+                <a href="skills.html" class="w-full sm:w-auto px-6 py-3 bg-navy-800 text-white hover:bg-navy-900 rounded-xl text-sm font-bold flex items-center justify-center gap-2 shadow-md transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] font-sans">
                     <i data-lucide="award" class="w-4 h-4 text-yellow-400"></i>
                     <span>능력 페이지로 가기</span>
                 </a>
@@ -176,7 +172,7 @@
         </div>
     </main>
 
-    <!-- 푸터 -->
+    <!-- 하단 푸터 -->
     <footer class="py-12 bg-navy-950 text-navy-200 border-t border-navy-900">
         <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between text-xs space-y-4 md:space-y-0">
             <div class="flex items-center space-x-2">
@@ -184,20 +180,19 @@
                 <span class="font-sans">© 2026 듬직하고 차분한 개발자 김영범. All Rights Reserved.</span>
             </div>
             <div class="flex space-x-6 text-navy-400 font-sans font-medium">
-                <a href="index.html" class="hover:text-white transition-all-300">홈</a>
-                <a href="about.html" class="hover:text-white transition-all-300">소개</a>
-                <a href="skills.html" class="hover:text-white transition-all-300">능력</a>
+                <a href="index.html" class="hover:text-white transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]">홈</a>
+                <a href="about.html" class="hover:text-white transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]">소개</a>
+                <a href="skills.html" class="hover:text-white transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]">능력</a>
             </div>
         </div>
     </footer>
 
-    <!-- 자바스크립트 로직 영역 -->
+    <!-- 로직 스크립트 -->
     <script>
-        // 토스트 알림 기능 구현
         function showToast(message, type = 'info') {
             const container = document.getElementById('toast-container');
             const toast = document.createElement('div');
-            toast.className = `flex items-center space-x-2 px-4 py-3 bg-white text-softgray-800 rounded-xl shadow-2xl border border-softgray-200/60 transition-all duration-300 transform translate-y-2 opacity-0 pointer-events-auto z-50`;
+            toast.className = `flex items-center space-x-2 px-4 py-3 bg-white text-softgray-800 rounded-xl shadow-2xl border border-softgray-200/60 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] transform translate-y-2 opacity-0 pointer-events-auto z-50`;
             
             let iconColor = 'text-navy-800';
             let iconName = 'info';
@@ -227,7 +222,6 @@
             }, 3000);
         }
 
-        // BGM 큐레이션 데이터 관리
         const bgmMetadata = {
             cafe: {
                 genre: 'Cozy Jazz Lofi',

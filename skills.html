@@ -13,9 +13,8 @@
     <style>
         body {
             font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
-            background-color: #F8FAFC;
         }
-        /* Custom scrollbar */
+        /* 브라우저 엔진 기본 스크롤바 커스텀 */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -25,14 +24,6 @@
         ::-webkit-scrollbar-thumb {
             background: #1B2A4A;
             border-radius: 4px;
-        }
-        .transition-all-300 {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        /* Block coding simulation specific styles */
-        .block-outline {
-            position: relative;
-            box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
         }
     </style>
     <script>
@@ -63,38 +54,38 @@
         }
     </script>
 </head>
-<body class="text-softgray-800 selection:bg-navy-200 selection:text-navy-900 overflow-x-hidden">
+<body class="bg-softgray-50 text-softgray-800 selection:bg-navy-200 selection:text-navy-900 overflow-x-hidden">
 
-    <!-- Navigation (MPA - Skills Active) -->
-    <nav class="fixed top-0 left-0 w-full z-50 bg-softgray-50/80 backdrop-blur-md border-b border-softgray-200 transition-all-300">
+    <!-- 내비게이션 바 (MPA - '능력' 활성화) -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-softgray-50/80 backdrop-blur-md border-b border-softgray-200 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]">
         <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
             <a href="index.html" class="flex items-center space-x-2 font-bold text-navy-800 text-lg">
                 <span class="w-3 h-3 bg-navy-800 rounded-full animate-pulse"></span>
                 <span>Calm & Persistent</span>
             </a>
             <div class="hidden md:flex space-x-8 text-sm font-medium text-softgray-600">
-                <a href="index.html" class="hover:text-navy-800 transition-all-300">홈</a>
-                <a href="about.html" class="hover:text-navy-800 transition-all-300">소개</a>
-                <!-- '능력' Page Active State applied natively -->
-                <a href="skills.html" class="text-navy-800 font-bold border-b-2 border-navy-800 pb-1 transition-all-300">능력</a>
+                <a href="index.html" class="hover:text-navy-800 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]">홈</a>
+                <a href="about.html" class="hover:text-navy-800 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]">소개</a>
+                <!-- '능력' 페이지 정적 활성화 디자인 -->
+                <a href="skills.html" class="text-navy-800 font-bold border-b-2 border-navy-800 pb-1 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]">능력</a>
             </div>
-            <a href="about.html#contact" class="px-4 py-2 bg-navy-800 hover:bg-navy-900 text-white rounded-lg text-xs font-semibold shadow-md transition-all-300 hover:shadow-lg">
+            <a href="about.html#contact" class="px-4 py-2 bg-navy-800 hover:bg-navy-900 text-white rounded-lg text-xs font-semibold shadow-md transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:shadow-lg">
                 협업 제안하기
             </a>
         </div>
     </nav>
 
-    <!-- Toast Popup -->
+    <!-- 알림용 토스트 컨테이너 -->
     <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 pointer-events-none"></div>
 
-    <!-- Section: CLUE SSAFY S등급 -->
+    <!-- 1섹션: CLUE SSAFY S등급 -->
     <section id="strength-clue" class="pt-28 pb-20 bg-navy-800 text-white relative overflow-hidden">
         <div class="absolute inset-0 bg-[radial-gradient(#ffffff0a_1px,transparent_1px)] [background-size:16px_16px]"></div>
         
         <div class="max-w-6xl mx-auto px-6 relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 
-                <!-- Left text -->
+                <!-- 좌측 실적 정보 -->
                 <div class="lg:col-span-5 space-y-6">
                     <div class="inline-flex items-center space-x-2 bg-navy-700/50 text-navy-100 border border-navy-500/30 px-3 py-1 rounded-full text-xs font-semibold">
                         <i data-lucide="zap" class="w-3.5 h-3.5 text-yellow-400"></i>
@@ -113,7 +104,7 @@
                         어설픈 타협에 만족하지 않고, 불필요하게 낭비되는 단 1회의 경로와 블록 낭비를 찾아내기 위해 고심했습니다. <strong class="text-yellow-400">최소한의 명령 블록만을 조립해 최고의 경로 효율을 뽑아내는 극한의 최적화 조건</strong>을 통과해 당당하게 <strong class="text-white">S등급을 15회 획득</strong>해냈습니다.
                     </p>
 
-                    <!-- Stat Box -->
+                    <!-- 통계 카드 -->
                     <div class="bg-navy-900/60 border border-navy-500/20 p-5 rounded-2xl flex items-center space-x-4">
                         <div class="w-12 h-12 bg-yellow-400/10 rounded-xl flex items-center justify-center">
                             <i data-lucide="award" class="w-6 h-6 text-yellow-400"></i>
@@ -125,7 +116,7 @@
                     </div>
                 </div>
 
-                <!-- Right Pathfinding Interactive Simulator -->
+                <!-- 우측 최단 탐색 인공지능 보드 시뮬레이터 -->
                 <div class="lg:col-span-7 bg-navy-900 border border-navy-700 p-6 rounded-3xl shadow-2xl">
                     <div class="flex items-center justify-between mb-4 border-b border-navy-700 pb-4">
                         <div class="flex items-center space-x-2">
@@ -137,28 +128,28 @@
 
                     <div class="relative bg-navy-950 rounded-2xl p-4 overflow-hidden shadow-inner flex flex-col md:flex-row items-center gap-6">
                         
-                        <!-- Grid Board -->
+                        <!-- 격자판 (Grid Board) -->
                         <div class="relative w-64 h-64 bg-navy-900 rounded-xl border border-navy-700/60 p-1 grid grid-cols-5 grid-rows-5 gap-1 shrink-0" id="clue-grid">
-                            <!-- JS populated -->
+                            <!-- JS에 의해 채워집니다 -->
                         </div>
 
-                        <!-- Panel Controls -->
+                        <!-- 우측 명령어 블록 패널 -->
                         <div class="flex-1 w-full space-y-4 text-left font-sans">
                             <h4 class="text-sm font-bold text-white flex items-center space-x-1.5">
                                 <i data-lucide="terminal" class="w-4 h-4 text-emerald-400"></i>
                                 <span>설계된 최적의 명령 알고리즘 블록</span>
                             </h4>
                             
-                            <!-- Custom Scratch/Blockly Styled Code -->
+                            <!-- 스크래치 스타일 블록 코딩 (기존 커스텀 CSS 완전히 대체한 Tailwind 인라인 내부 그림자 적용) -->
                             <div class="space-y-1 font-mono text-[11px] text-navy-100">
-                                <div id="code-block-repeat" class="bg-indigo-900/60 border-l-4 border-indigo-500 p-2 rounded-lg block-outline transition-all duration-300">
+                                <div id="code-block-repeat" class="bg-indigo-900/60 border-l-4 border-indigo-500 p-2 rounded-lg shadow-[inset_0_1px_0_rgba(255,255,255,0.1)] transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]">
                                     <span class="font-bold text-indigo-300">목적지까지 반복 {</span>
                                     
-                                    <div id="code-block-condition" class="pl-4 py-1 my-1 bg-amber-900/40 border-l-4 border-amber-500 rounded block-outline transition-all duration-300">
+                                    <div id="code-block-condition" class="pl-4 py-1 my-1 bg-amber-900/40 border-l-4 border-amber-500 rounded shadow-[inset_0_1px_0_rgba(255,255,255,0.1)] transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]">
                                         <div class="font-bold text-amber-300 font-sans">만약 [<span class="text-white">오른쪽</span>]에 길이 있다면 {</div>
-                                        <div id="code-block-turn" class="pl-4 py-1 text-emerald-300 font-bold transition-all duration-300">&rarr; 우로 회전</div>
+                                        <div id="code-block-turn" class="pl-4 py-1 text-emerald-300 font-bold transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]">&rarr; 우로 회전</div>
                                         <div class="font-bold text-amber-300 font-sans">} 아니라면 {</div>
-                                        <div id="code-block-forward" class="pl-4 py-1 text-emerald-300 font-bold transition-all duration-300">&rarr; 앞으로 전진</div>
+                                        <div id="code-block-forward" class="pl-4 py-1 text-emerald-300 font-bold transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]">&rarr; 앞으로 전진</div>
                                         <div class="font-bold text-amber-300 font-sans">}</div>
                                     </div>
                                     
@@ -167,7 +158,7 @@
                             </div>
 
                             <div class="pt-1 flex flex-col gap-2">
-                                <button onclick="runClueSimulation()" id="btn-run-simulation" class="w-full py-2.5 px-4 bg-emerald-500 hover:bg-emerald-600 text-navy-950 font-bold rounded-xl text-xs flex items-center justify-center space-x-2 shadow-lg shadow-emerald-500/20 active:scale-95 transition-all-300">
+                                <button onclick="runClueSimulation()" id="btn-run-simulation" class="w-full py-2.5 px-4 bg-emerald-500 hover:bg-emerald-600 text-navy-950 font-bold rounded-xl text-xs flex items-center justify-center space-x-2 shadow-lg shadow-emerald-500/20 active:scale-95 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]">
                                     <i data-lucide="play-circle" class="w-4 h-4"></i>
                                     <span>최소 블록 최적화 시뮬레이션 작동</span>
                                 </button>
@@ -182,7 +173,7 @@
         </div>
     </section>
 
-    <!-- Section: 실무 경력 -->
+    <!-- 2섹션: 실무 경력 -->
     <section id="strength-experience" class="py-20 bg-softgray-100 border-b border-softgray-200 relative overflow-hidden">
         <div class="absolute top-10 right-10 w-96 h-96 bg-navy-100 rounded-full filter blur-3xl opacity-30 -z-10"></div>
         
@@ -200,7 +191,7 @@
                 </p>
             </div>
 
-            <!-- Experience Card -->
+            <!-- 경력 히스토리 타임라인 카드 -->
             <div class="bg-white border border-softgray-200 rounded-3xl p-8 shadow-xl max-w-4xl mx-auto">
                 <div class="flex flex-col md:flex-row md:items-center justify-between border-b border-softgray-200 pb-6 mb-6 gap-4">
                     <div class="flex items-center space-x-4">
@@ -225,8 +216,8 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     
-                    <!-- Task 1 -->
-                    <div class="p-5 rounded-2xl bg-softgray-50 border border-softgray-200 flex flex-col justify-between transition-all duration-300 hover:border-navy-200 hover:shadow-md">
+                    <!-- 성과 1 -->
+                    <div class="p-5 rounded-2xl bg-softgray-50 border border-softgray-200 flex flex-col justify-between transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:border-navy-200 hover:shadow-md">
                         <div class="space-y-4">
                             <div class="w-10 h-10 rounded-xl bg-navy-800 text-white flex items-center justify-center shadow">
                                 <i data-lucide="file-up" class="w-5 h-5"></i>
@@ -241,8 +232,8 @@
                         </div>
                     </div>
 
-                    <!-- Task 2 -->
-                    <div class="p-5 rounded-2xl bg-softgray-50 border border-softgray-200 flex flex-col justify-between transition-all duration-300 hover:border-navy-200 hover:shadow-md">
+                    <!-- 성과 2 -->
+                    <div class="p-5 rounded-2xl bg-softgray-50 border border-softgray-200 flex flex-col justify-between transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:border-navy-200 hover:shadow-md">
                         <div class="space-y-4">
                             <div class="w-10 h-10 rounded-xl bg-navy-800 text-white flex items-center justify-center shadow">
                                 <i data-lucide="server" class="w-5 h-5"></i>
@@ -257,8 +248,8 @@
                         </div>
                     </div>
 
-                    <!-- Task 3 -->
-                    <div class="p-5 rounded-2xl bg-softgray-50 border border-softgray-200 flex flex-col justify-between transition-all duration-300 hover:border-navy-200 hover:shadow-md">
+                    <!-- 성과 3 -->
+                    <div class="p-5 rounded-2xl bg-softgray-50 border border-softgray-200 flex flex-col justify-between transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:border-navy-200 hover:shadow-md">
                         <div class="space-y-4">
                             <div class="w-10 h-10 rounded-xl bg-navy-800 text-white flex items-center justify-center shadow">
                                 <i data-lucide="git-branch" class="w-5 h-5"></i>
@@ -278,7 +269,7 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- 푸터 -->
     <footer class="py-12 bg-navy-950 text-navy-200 border-t border-navy-900">
         <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between text-xs space-y-4 md:space-y-0">
             <div class="flex items-center space-x-2">
@@ -286,19 +277,19 @@
                 <span>© 2026 듬직하고 차분한 개발자 김영범. All Rights Reserved.</span>
             </div>
             <div class="flex space-x-6 text-navy-400">
-                <a href="index.html" class="hover:text-white transition-all-300">홈</a>
-                <a href="about.html" class="hover:text-white transition-all-300">소개</a>
-                <a href="skills.html" class="hover:text-white transition-all-300">능력</a>
+                <a href="index.html" class="hover:text-white transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]">홈</a>
+                <a href="about.html" class="hover:text-white transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]">소개</a>
+                <a href="skills.html" class="hover:text-white transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]">능력</a>
             </div>
         </div>
     </footer>
 
-    <!-- Pathfinding simulation logic -->
+    <!-- 자바스크립트 로봇 시뮬레이션 알고리즘 연산 구현부 -->
     <script>
         function showToast(message, type = 'info') {
             const container = document.getElementById('toast-container');
             const toast = document.createElement('div');
-            toast.className = `flex items-center space-x-2 px-4 py-3 bg-white text-softgray-800 rounded-xl shadow-2xl border border-softgray-200/60 transition-all duration-300 transform translate-y-2 opacity-0 pointer-events-auto z-50`;
+            toast.className = `flex items-center space-x-2 px-4 py-3 bg-white text-softgray-800 rounded-xl shadow-2xl border border-softgray-200/60 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] transform translate-y-2 opacity-0 pointer-events-auto z-50`;
             
             let iconColor = 'text-navy-800';
             let iconName = 'info';
@@ -335,6 +326,7 @@
         let simulationInterval = null;
         let isSimulating = false;
 
+        // 장애물 좌표 정의
         const obstacles = [
             [0, 1], [0, 2], [1, 1], [1, 2], 
             [3, 0], [3, 1], [3, 2], 
@@ -347,7 +339,7 @@
             for (let r = 0; r < boardSize; r++) {
                 for (let c = 0; c < boardSize; c++) {
                     const cell = document.createElement('div');
-                    cell.className = 'bg-navy-950 border border-navy-800 rounded-lg flex items-center justify-center relative font-mono text-[9px] text-navy-500 transition-all duration-300';
+                    cell.className = 'bg-navy-950 border border-navy-800 rounded-lg flex items-center justify-center relative font-mono text-[9px] text-navy-500 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]';
                     cell.setAttribute('data-r', r);
                     cell.setAttribute('data-c', c);
 

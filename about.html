@@ -13,9 +13,8 @@
     <style>
         body {
             font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
-            background-color: #F8FAFC;
         }
-        /* Custom scrollbar */
+        /* 브라우저 엔진 기본 스크롤바 커스텀 */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -25,9 +24,6 @@
         ::-webkit-scrollbar-thumb {
             background: #1B2A4A;
             border-radius: 4px;
-        }
-        .transition-all-300 {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
     </style>
     <script>
@@ -40,7 +36,7 @@
                             100: '#D9E2F1',
                             200: '#B3C6E3',
                             500: '#3F619B',
-                            800: '#1B2A4A', /* Main Navy */
+                            800: '#1B2A4A', /* 메인 네이비 */
                             900: '#0F1A30',
                             950: '#0A1120'
                         },
@@ -58,31 +54,31 @@
         }
     </script>
 </head>
-<body class="text-softgray-800 selection:bg-navy-200 selection:text-navy-900 overflow-x-hidden">
+<body class="bg-softgray-50 text-softgray-800 selection:bg-navy-200 selection:text-navy-900 overflow-x-hidden">
 
-    <!-- Navigation (MPA - About Active) -->
-    <nav class="fixed top-0 left-0 w-full z-50 bg-softgray-50/80 backdrop-blur-md border-b border-softgray-200 transition-all-300">
+    <!-- 내비게이션 바 (MPA - '소개' 활성화) -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-softgray-50/80 backdrop-blur-md border-b border-softgray-200 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]">
         <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
             <a href="index.html" class="flex items-center space-x-2 font-bold text-navy-800 text-lg">
                 <span class="w-3 h-3 bg-navy-800 rounded-full animate-pulse"></span>
                 <span>Calm & Persistent</span>
             </a>
             <div class="hidden md:flex space-x-8 text-sm font-medium text-softgray-600">
-                <a href="index.html" class="hover:text-navy-800 transition-all-300">홈</a>
-                <!-- '소개' Page Active State applied natively -->
-                <a href="about.html" class="text-navy-800 font-bold border-b-2 border-navy-800 pb-1 transition-all-300">소개</a>
-                <a href="skills.html" class="hover:text-navy-800 transition-all-300">능력</a>
+                <a href="index.html" class="hover:text-navy-800 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]">홈</a>
+                <!-- '소개' 페이지 정적 활성화 디자인 -->
+                <a href="about.html" class="text-navy-800 font-bold border-b-2 border-navy-800 pb-1 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]">소개</a>
+                <a href="skills.html" class="hover:text-navy-800 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]">능력</a>
             </div>
-            <a href="#contact" class="px-4 py-2 bg-navy-800 hover:bg-navy-900 text-white rounded-lg text-xs font-semibold shadow-md transition-all-300 hover:shadow-lg">
+            <a href="#contact" class="px-4 py-2 bg-navy-800 hover:bg-navy-900 text-white rounded-lg text-xs font-semibold shadow-md transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:shadow-lg">
                 협업 제안하기
             </a>
         </div>
     </nav>
 
-    <!-- Toast Popup -->
+    <!-- 알림용 토스트 컨테이너 -->
     <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 pointer-events-none"></div>
 
-    <!-- Section: 듬직하고 안전한 협업 -->
+    <!-- 1섹션: 듬직하고 안전한 협업 -->
     <section id="strength-reliability" class="pt-28 pb-20 bg-softgray-50 border-b border-softgray-200 relative overflow-hidden">
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-navy-50 rounded-full filter blur-[120px] opacity-40 -z-10"></div>
         
@@ -100,11 +96,11 @@
                 </p>
             </div>
 
-            <!-- Profile and Stat Block Grid -->
+            <!-- 프로필 및 핵심 지표 그리드 -->
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
                 
-                <!-- Left Profile card -->
-                <div class="lg:col-span-4 bg-white border border-softgray-200 p-8 rounded-3xl shadow-xl flex flex-col justify-between transform hover:-translate-y-1 transition-all-300">
+                <!-- 좌측 프로필 카드 -->
+                <div class="lg:col-span-4 bg-white border border-softgray-200 p-8 rounded-3xl shadow-xl flex flex-col justify-between transform hover:-translate-y-1 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]">
                     <div class="space-y-6">
                         <div class="flex items-center justify-between">
                             <span class="text-[11px] font-mono font-bold bg-navy-800 text-white px-2 py-0.5 rounded uppercase">Eldest Brother</span>
@@ -114,7 +110,7 @@
                             </span>
                         </div>
 
-                        <!-- Graphic Avatar -->
+                        <!-- 비주얼 아바타 데코 -->
                         <div class="w-32 h-32 mx-auto bg-gradient-to-tr from-navy-800 to-navy-50 rounded-3xl flex items-center justify-center text-white shadow-lg relative overflow-hidden">
                             <div class="absolute inset-0 border-[6px] border-white/10 rounded-3xl"></div>
                             <svg class="w-20 h-20 opacity-90 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2">
@@ -141,7 +137,7 @@
                     </div>
                 </div>
 
-                <!-- Right Core metrics -->
+                <!-- 우측 협업 지수 분석 패널 -->
                 <div class="lg:col-span-8 bg-white border border-softgray-200 p-8 rounded-3xl shadow-xl flex flex-col justify-between">
                     <div class="space-y-6">
                         <div class="flex items-center space-x-2">
@@ -150,6 +146,7 @@
                         </div>
                         
                         <div class="space-y-4">
+                            <!-- 지표 1 -->
                             <div class="space-y-2">
                                 <div class="flex justify-between items-center text-sm">
                                     <span class="font-bold text-navy-800 flex items-center gap-1.5">
@@ -164,6 +161,7 @@
                                 <p class="text-xs text-softgray-600">두 명의 여동생을 살뜰히 배려하며 자라난 타고난 소통 감각과 리더십</p>
                             </div>
 
+                            <!-- 지표 2 -->
                             <div class="space-y-2">
                                 <div class="flex justify-between items-center text-sm">
                                     <span class="font-bold text-navy-800 flex items-center gap-1.5">
@@ -178,6 +176,7 @@
                                 <p class="text-xs text-softgray-600">듬직한 체구와 정서적 단단함에서 오는 안정감으로 팀원들의 멘탈 수호</p>
                             </div>
 
+                            <!-- 지표 3 -->
                             <div class="space-y-2">
                                 <div class="flex justify-between items-center text-sm">
                                     <span class="font-bold text-navy-800 flex items-center gap-1.5">
@@ -206,15 +205,15 @@
         </div>
     </section>
 
-    <!-- Section: 취미와 여유 -->
+    <!-- 2섹션: 취미와 여유 -->
     <section id="strength-calmness" class="py-20 bg-white relative overflow-hidden">
         <div class="max-w-6xl mx-auto px-6">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 
-                <!-- Left: Calm illustration / list -->
+                <!-- 좌측 디자인 카드 (그라데이션 및 원형 광원 효과 전면 적용) -->
                 <div class="lg:col-span-6 relative">
                     <div class="bg-gradient-to-br from-softgray-50 to-softgray-200 p-8 rounded-3xl border border-softgray-200 shadow-xl relative overflow-hidden group">
-                        <div class="absolute -bottom-10 -right-10 w-48 h-48 bg-navy-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 group-hover:scale-110 transition-all-300"></div>
+                        <div class="absolute -bottom-10 -right-10 w-48 h-48 bg-navy-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 group-hover:scale-110 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]"></div>
                         
                         <div class="relative z-10 space-y-6">
                             <h3 class="text-xl font-extrabold text-navy-800 flex items-center space-x-2">
@@ -223,6 +222,7 @@
                             </h3>
 
                             <div class="space-y-4">
+                                <!-- 취미 카드 1 -->
                                 <div class="bg-white p-4 rounded-xl border border-softgray-200 flex items-start space-x-3">
                                     <div class="w-8 h-8 rounded-full bg-navy-50 flex items-center justify-center shrink-0">
                                         <i data-lucide="headphones" class="w-4 h-4 text-navy-800"></i>
@@ -233,6 +233,7 @@
                                     </div>
                                 </div>
 
+                                <!-- 취미 카드 2 -->
                                 <div class="bg-white p-4 rounded-xl border border-softgray-200 flex items-start space-x-3">
                                     <div class="w-8 h-8 rounded-full bg-navy-50 flex items-center justify-center shrink-0">
                                         <i data-lucide="footprints" class="w-4 h-4 text-navy-800"></i>
@@ -243,6 +244,7 @@
                                     </div>
                                 </div>
 
+                                <!-- 취미 카드 3 -->
                                 <div class="bg-white p-4 rounded-xl border border-softgray-200 flex items-start space-x-3">
                                     <div class="w-8 h-8 rounded-full bg-navy-50 flex items-center justify-center shrink-0">
                                         <i data-lucide="coffee" class="w-4 h-4 text-navy-800"></i>
@@ -257,7 +259,7 @@
                     </div>
                 </div>
 
-                <!-- Right Text -->
+                <!-- 우측 철학 설명 영역 -->
                 <div class="lg:col-span-6 space-y-6">
                     <div class="inline-flex items-center space-x-2 bg-navy-50 text-navy-800 border border-navy-100 px-3 py-1 rounded-full text-xs font-semibold">
                         <i data-lucide="heart" class="w-3.5 h-3.5 text-navy-800"></i>
@@ -285,7 +287,7 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- 3섹션: 연락 및 메시지 수신 (CTA) -->
     <section id="contact" class="py-24 bg-gradient-to-t from-navy-950 to-navy-900 text-white relative overflow-hidden">
         <div class="absolute inset-0 bg-[radial-gradient(#ffffff04_1px,transparent_1px)] [background-size:24px_24px]"></div>
         
@@ -307,10 +309,10 @@
                 </p>
             </div>
 
-            <!-- Interactivity Area -->
+            <!-- 메시지 전송 & 채널 카드 그리드 -->
             <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch max-w-3xl mx-auto text-left justify-center">
                 
-                <!-- Info card -->
+                <!-- 채널 카드 -->
                 <div class="md:col-span-5 bg-navy-900 border border-navy-800 p-6 rounded-2xl flex flex-col justify-between space-y-4 mx-auto w-full">
                     <div class="space-y-4">
                         <h4 class="text-sm font-bold text-navy-200 uppercase tracking-widest">Direct Contact Channel</h4>
@@ -322,28 +324,28 @@
                         </div>
                     </div>
 
-                    <button onclick="copyToClipboard('kimyungbum2@gmail.com')" class="w-full py-2.5 px-4 bg-navy-800 hover:bg-navy-700 text-white rounded-xl text-xs font-bold flex items-center justify-center space-x-2 border border-navy-700 active:scale-95 transition-all-300">
+                    <button onclick="copyToClipboard('kimyungbum2@gmail.com')" class="w-full py-2.5 px-4 bg-navy-800 hover:bg-navy-700 text-white rounded-xl text-xs font-bold flex items-center justify-center space-x-2 border border-navy-700 active:scale-95 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]">
                         <i data-lucide="copy" class="w-4 h-4"></i>
                         <span>이메일 주소 복사하기</span>
                     </button>
                 </div>
 
-                <!-- Feedback Form -->
+                <!-- 로컬 연동 메시지 폼 -->
                 <form id="contact-form" onsubmit="handleContactSubmit(event)" class="md:col-span-7 bg-white text-softgray-800 p-6 rounded-2xl space-y-4 shadow-xl">
                     <h4 class="text-sm font-bold text-navy-800">제안 또는 피드백 보내기</h4>
                     
                     <div class="space-y-3">
                         <div>
                             <label class="block text-[11px] font-bold text-softgray-600 mb-1">작성자 (성함 또는 16기 반 번호)</label>
-                            <input type="text" id="sender-name" required placeholder="예: SSAFY 16기 서울 3반 이지은" class="w-full px-3 py-2 bg-softgray-50 border border-softgray-200 rounded-xl text-xs focus:ring-2 focus:ring-navy-800 focus:outline-none transition-all-300">
+                            <input type="text" id="sender-name" required placeholder="예: SSAFY 16기 서울 3반 이지은" class="w-full px-3 py-2 bg-softgray-50 border border-softgray-200 rounded-xl text-xs focus:ring-2 focus:ring-navy-800 focus:outline-none transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]">
                         </div>
                         <div>
                             <label class="block text-[11px] font-bold text-softgray-600 mb-1">메시지 내용</label>
-                            <textarea id="sender-message" required rows="3" placeholder="협업이나 스터디 제안, 또는 소중한 피드백을 자유롭게 남겨주세요." class="w-full px-3 py-2 bg-softgray-50 border border-softgray-200 rounded-xl text-xs focus:ring-2 focus:ring-navy-800 focus:outline-none transition-all-300 resize-none"></textarea>
+                            <textarea id="sender-message" required rows="3" placeholder="협업이나 스터디 제안, 또는 소중한 피드백을 자유롭게 남겨주세요." class="w-full px-3 py-2 bg-softgray-50 border border-softgray-200 rounded-xl text-xs focus:ring-2 focus:ring-navy-800 focus:outline-none transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] resize-none"></textarea>
                         </div>
                     </div>
 
-                    <button type="submit" class="w-full py-2.5 px-4 bg-navy-800 hover:bg-navy-900 text-white rounded-xl text-xs font-bold flex items-center justify-center space-x-2 shadow-lg shadow-navy-800/20 active:scale-95 transition-all-300">
+                    <button type="submit" class="w-full py-2.5 px-4 bg-navy-800 hover:bg-navy-900 text-white rounded-xl text-xs font-bold flex items-center justify-center space-x-2 shadow-lg shadow-navy-800/20 active:scale-95 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]">
                         <i data-lucide="send" class="w-4 h-4"></i>
                         <span>차분하고 든든한 메시지 송신</span>
                     </button>
@@ -353,7 +355,7 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- 푸터 -->
     <footer class="py-12 bg-navy-950 text-navy-200 border-t border-navy-900">
         <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between text-xs space-y-4 md:space-y-0">
             <div class="flex items-center space-x-2">
@@ -361,19 +363,19 @@
                 <span>© 2026 듬직하고 차분한 개발자 김영범. All Rights Reserved.</span>
             </div>
             <div class="flex space-x-6 text-navy-400">
-                <a href="index.html" class="hover:text-white transition-all-300">홈</a>
-                <a href="about.html" class="hover:text-white transition-all-300">소개</a>
-                <a href="skills.html" class="hover:text-white transition-all-300">능력</a>
+                <a href="index.html" class="hover:text-white transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]">홈</a>
+                <a href="about.html" class="hover:text-white transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]">소개</a>
+                <a href="skills.html" class="hover:text-white transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]">능력</a>
             </div>
         </div>
     </footer>
 
-    <!-- Logic operations -->
+    <!-- 로컬 스토리지 연계 스크립트 -->
     <script>
         function showToast(message, type = 'info') {
             const container = document.getElementById('toast-container');
             const toast = document.createElement('div');
-            toast.className = `flex items-center space-x-2 px-4 py-3 bg-white text-softgray-800 rounded-xl shadow-2xl border border-softgray-200/60 transition-all duration-300 transform translate-y-2 opacity-0 pointer-events-auto z-50`;
+            toast.className = `flex items-center space-x-2 px-4 py-3 bg-white text-softgray-800 rounded-xl shadow-2xl border border-softgray-200/60 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] transform translate-y-2 opacity-0 pointer-events-auto z-50`;
             
             let iconColor = 'text-navy-800';
             let iconName = 'info';
@@ -426,7 +428,7 @@
             const message = messageInput.value.trim();
 
             if (!name || !message) {
-                showToast('이름과 메시지를 입력을 확인해 주세요.', 'error');
+                showToast('이름과 메시지 입력을 확인해 주세요.', 'error');
                 return;
             }
 
